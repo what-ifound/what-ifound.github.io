@@ -208,19 +208,16 @@ body.theme-green {
   transform: translateY(-4px);
 }
 
-.image-card:focus-visible {
-  outline: 2px solid #ff00a8;
-  outline-offset: 6px;
-}
-
 .image-card:focus {
-  outline: 2px solid #ff00a8;
-  outline-offset: 6px;
+  outline: none;
 }
 
 .image-card:active {
-  outline: 2px solid #ff00a8;
-  outline-offset: 6px;
+  outline: none;
+}
+
+.image-card:focus-visible {
+  outline: none;
 }
 
 .image-card::-moz-focus-inner {
