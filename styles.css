@@ -61,6 +61,41 @@ body.theme-green {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
   padding: 56px 0 32px;
+  position: relative;
+}
+
+.page-shell-about {
+  min-height: 100vh;
+}
+
+.info-link {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(6px);
+}
+
+.info-link:hover {
+  background: #ff00a8;
+  border-color: #ff00a8;
+  color: #fff7f8;
+}
+
+.info-link-back {
+  font-size: 1.1rem;
+}
 }
 
 .hero {
@@ -159,6 +194,10 @@ body.theme-green {
   background: transparent;
   box-shadow: none;
   cursor: zoom-in;
+  appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  -webkit-tap-highlight-color: rgba(255, 0, 168, 0.28);
   transition:
     transform 240ms ease,
     background-color 240ms ease,
@@ -174,6 +213,20 @@ body.theme-green {
   outline-offset: 6px;
 }
 
+.image-card:focus {
+  outline: 2px solid #ff00a8;
+  outline-offset: 6px;
+}
+
+.image-card:active {
+  outline: 2px solid #ff00a8;
+  outline-offset: 6px;
+}
+
+.image-card::-moz-focus-inner {
+  border: 0;
+}
+
 .image-card.is-featured {
   grid-column: auto;
 }
@@ -187,6 +240,8 @@ body.theme-green {
   box-shadow: none;
   transform: none;
   cursor: zoom-out;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .image-frame {
@@ -227,6 +282,30 @@ body.theme-green {
   text-decoration: underline;
 }
 
+.about-page {
+  display: grid;
+  align-content: center;
+  min-height: calc(100vh - 88px);
+  max-width: 760px;
+}
+
+.about-title {
+  margin: 0 0 20px;
+  font-size: clamp(3rem, 9vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.about-copy {
+  display: grid;
+  gap: 18px;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+  color: rgba(47, 38, 29, 0.88);
+}
+
 @media (max-width: 900px) {
   .project-section {
     grid-template-columns: 1fr;
@@ -253,6 +332,10 @@ body.theme-green {
     padding-top: 28px;
   }
 
+  .info-link {
+    top: 8px;
+  }
+
   .hero {
     padding: 20px 0 48px;
   }
@@ -270,6 +353,16 @@ body.theme-green {
   .image-card.is-featured,
   .image-card.is-expanded {
     grid-column: auto;
+  }
+
+  .image-card.is-expanded {
+    justify-self: center;
+  }
+
+  .image-card:focus,
+  .image-card:focus-visible,
+  .image-card:active {
+    outline: none;
   }
 
   .contact-footer {

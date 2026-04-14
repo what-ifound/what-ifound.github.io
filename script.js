@@ -47,6 +47,7 @@ imageCards.forEach((card) => {
         const expandedWidth = Math.min(image.naturalWidth, window.innerWidth - 48);
         card.style.width = `${expandedWidth}px`;
         image.style.width = `${expandedWidth}px`;
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
   });
